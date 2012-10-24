@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @lyric.title %>
+</p>
+
+<p>
+  <b>Text:</b>
+  <%= @lyric.text %>
+</p>
+
+
+<%= link_to 'Edit', edit_lyric_path(@lyric) %> |
+<%= link_to 'Back', lyrics_path %>

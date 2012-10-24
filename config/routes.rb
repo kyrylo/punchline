@@ -1,4 +1,6 @@
 Punchline::Application.routes.draw do
+  resources :lyrics
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
