@@ -30,3 +30,9 @@ group :assets do
   # Source code: https://github.com/lautis/uglifier
   gem 'uglifier', '>= 1.0.3'
 end
+
+group :test, :development do
+  # MiniTest integration.
+  # Source code: https://github.com/blowmage/minitest-rails
+  gem 'minitest-rails'
+end
