@@ -64,5 +64,16 @@ module Punchline
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Set MiniTest defaults for generation of stuff.
+    # Example:
+    #   # We don't need to write `--spec`.
+    #   rails g model User --spec
+    #
+    #   # And also we don't need `--skip-fixture` anymore.
+    #   rails g model Admin --skip-fixture
+    config.generators do |g|
+      g.test_framework :mini_test, spec: true, fixture: false
+    end
   end
 end
