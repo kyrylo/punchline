@@ -35,4 +35,16 @@ group :test, :development do
   # MiniTest integration.
   # Source code: https://github.com/blowmage/minitest-rails
   gem 'minitest-rails'
+
+  # An IRB alternative and runtime developer console.
+  # Source code: https://github.com/pry/pry
+  gem 'pry'
+
+  # Allows you to use gems not in your Gemfile from Pry.
+  # Source code: https://github.com/ConradIrwin/pry-debundle
+  gem 'pry-debundle'
+
+  # Rails 3 Pry initializer.
+  # Source code: https://github.com/rweng/pry-rails
+  gem 'pry-rails'
 end
