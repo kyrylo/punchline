@@ -16,3 +16,6 @@
 
 # Ignore sensitive data (passwords, logins)
 /config/database.yml
+
+# Ignore backup files
+*~
