@@ -1,9 +1,15 @@
+# coding: utf-8
+
 require "minitest_helper"
 
 describe LyricsController do
 
   before do
-    @lyric = Lyric.new
+    @lyric  = lyrics(:between_us)
+    @update = {
+      title: 'Стрижка',
+      text: 'Подровнял виски. Чё сказать? Ну вылитый скин!'
+    }
   end
 
   it "must get index" do
@@ -19,30 +25,30 @@ describe LyricsController do
 
   it "must create lyric" do
     assert_difference('Lyric.count') do
-      post :create, lyric: @lyric.attributes
+      post :create, lyric: @update
     end
 
     assert_redirected_to lyric_path(assigns(:lyric))
   end
 
   it "must show lyric" do
-    get :show, id: @lyric.to_param
+    get :show, id: @lyric
     assert_response :success
   end
 
   it "must get edit" do
-    get :edit, id: @lyric.to_param
+    get :edit, id: @lyric
     assert_response :success
   end
 
   it "must update lyric" do
-    put :update, id: @lyric.to_param, lyric: @lyric.attributes
+    put :update, id: @lyric, lyric: @update
     assert_redirected_to lyric_path(assigns(:lyric))
   end
 
   it "must destroy lyric" do
     assert_difference('Lyric.count', -1) do
-      delete :destroy, id: @lyric.to_param
+      delete :destroy, id: @lyric
     end
 
     assert_redirected_to lyrics_path
