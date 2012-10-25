@@ -6,10 +6,8 @@ describe LyricsController do
 
   before do
     @lyric  = lyrics(:between_us)
-    @update = {
-      title: 'Стрижка',
-      text: 'Подровнял виски. Чё сказать? Ну вылитый скин!'
-    }
+    @update = { title: 'Стрижка',
+                text:  'Подровнял виски. Чё сказать? Ну вылитый скин!' }
   end
 
   it "must get index" do
