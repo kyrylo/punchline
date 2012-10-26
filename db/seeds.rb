@@ -8,7 +8,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-artists = %w{'Проект Увечье', 'Oxxxymiron', 'the Chemodan'}.map do |artist|
+artists = ['Проект Увечье', 'Oxxxymiron', 'the Chemodan'].map do |artist|
   Artist.create!(name: artist)
 end
 
