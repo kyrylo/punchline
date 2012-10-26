@@ -5,15 +5,13 @@
     <th>Title</th>
     <th>Text</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @lyrics.each do |lyric| %>
   <tr>
-    <td><%= lyric.title %></td>
-    <td><%= lyric.text %></td>
-    <td><%= link_to 'Show', lyric %></td>
+    <td>
+      <%= link_to lyric.artist.name, lyric.artist %> — <%= link_to lyric.title, lyric %>
+    </td>
     <td><%= link_to 'Edit', edit_lyric_path(lyric) %></td>
     <td><%= link_to 'Destroy', lyric, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>

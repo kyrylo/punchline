@@ -9,7 +9,7 @@
 <body>
 
   <div id="header" style="font-size: 200%;">
-    Панчлайн
+    <%= link_to_unless current_page?(root_path), 'Панчлайн', root_path %>
   </div>
 
 <%= yield %>
