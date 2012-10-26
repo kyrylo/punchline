@@ -3,14 +3,12 @@
 require "minitest_helper"
 
 describe Lyric do
-  before do
-    @between_us = lyrics(:between_us)
-  end
+  let(:between_us) { lyrics(:between_us) }
 
   it "should create a lyric" do
-    assert @between_us.save
-    assert @between_us.errors[:title].empty?
-    assert @between_us.errors[:text].empty?
+    assert between_us.save
+    assert between_us.errors[:title].empty?
+    assert between_us.errors[:text].empty?
   end
 
   describe "validations" do

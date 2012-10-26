@@ -3,13 +3,11 @@
 require "minitest_helper"
 
 describe Artist do
-  before do
-    @oxxxymiron = artists(:oxxxymiron)
-  end
+  let(:oxxxymiron) { artists(:oxxxymiron) }
 
   it "should create an artist" do
-    assert @oxxxymiron.save
-    assert @oxxxymiron.errors[:name].empty?
+    assert oxxxymiron.save
+    assert oxxxymiron.errors[:name].empty?
   end
 
   describe "validations" do
