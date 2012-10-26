@@ -1,0 +1,14 @@
+<% if target.errors.any? %>
+  <div id="error_explanation">
+    <h2>Данные некорректны</h2>
+
+    <ul>
+    <% error_messages_for(target.errors).each do |message| %>
+      <li>
+        <%= message %>
+      </li>
+    <% end %>
+    </ul>
+
+  </div>
+<% end %>
