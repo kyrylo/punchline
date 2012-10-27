@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Title:</b>
-  <%= @lyric.title %>
+  <b><%= @lyric.artist.name %> — <%= @lyric.title %></b>
 </p>
 
-<p>
-  <b>Text:</b>
+<pre style="width: 50%;">
   <%= @lyric.text %>
-</p>
+</pre>
 
 
 <%= link_to 'Edit', edit_lyric_path(@lyric) %> |
