@@ -29,6 +29,19 @@ group :assets do
   # Ruby wrapper for UglifyJS JavaScript compressor.
   # Source code: https://github.com/lautis/uglifier
   gem 'uglifier', '>= 1.0.3'
+
+  # A Stylesheet Authoring Environment that makes a website design simpler to
+  # implement and easier to maintain.
+  # Source code: https://github.com/chriseppstein/compass
+  gem 'compass', '~> 0.12.2'
+
+  # A Rails adapter for Compass.
+  # Source code: https://github.com/Compass/compass-rails
+  gem 'compass-rails', '~> 1.0.3'
+
+  # Susy is a semantic CSS grid system with a responsive twist.
+  # Source code: https://github.com/ericam/susy
+  gem 'susy', '~> 1.0.3'
 end
 
 group :test, :development do
