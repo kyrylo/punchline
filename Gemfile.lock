@@ -122,8 +122,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  compass (>= 0.12.2)
-  compass-rails (>= 1.0.3)
+  compass (~> 0.12.2)
+  compass-rails (~> 1.0.3)
   jquery-rails
   minitest-rails
   pg (~> 0.14.1)

@@ -3,7 +3,7 @@
 class Artist < ActiveRecord::Base
   has_many :lyrics
 
-  attr_accessible :name
+  attr_accessible :name, :city, :bio
 
   validates_associated :lyrics
 

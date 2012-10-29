@@ -2,6 +2,6 @@
 
 <ul>
   <% artist.lyrics.each do |lyric| %>
-    <li><%= link_to lyric.title, lyric %></li>
+    <li><%= link_to lyric.title, artist_lyric_path(artist, lyric) %></li>
   <% end %>
 </ul>
