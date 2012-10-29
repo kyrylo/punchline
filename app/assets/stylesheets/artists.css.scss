@@ -1,3 +1,31 @@
 // Place all the styles related to the artists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#artist_header
+{
+	width: 50%;
+	margin: 0 auto;
+	text-align: center;
+
+	#artist_title
+	{
+	}
+
+	span#artist_aliases
+	{
+		color: #707080;
+		font-size: 80%;
+		font-style: italic;
+	}
+}
+
+#artist_bio
+{
+	/*@include span-columns(3, 12);*/
+}
+
+#lyrics_list
+{
+
+}

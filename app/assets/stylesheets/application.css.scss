@@ -20,6 +20,11 @@
 /* Responsive grids! http://susy.oddbird.net/ */
 @import "susy";
 
+$total-columns  : 12;
+$column-width   : 10em;
+$gutter-width   : 1em;
+$grid-padding   : $gutter-width;
+
 @font-face
 {
 	font-family: 'Cuprum Italic';
@@ -48,6 +53,27 @@ body
 	font-size: 16px;
 	line-height: 1.4;
 }
+
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Scada Regular', Arial, sans-serif;
+	font-weight: normal;
+	position: relative;
+	color: #000000;
+}
+
+h1
+{
+	font-size: 264%;
+	margin: 0.1em 0 0.3em;
+	line-height: 1.1;
+}
+
+h1.smaller
+{
+	font-size: 168%;
+}
+
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -118,6 +144,7 @@ div {
 
 #layout
 {
+	@include container;
 	position: relative;
 
 	#header

@@ -1,7 +1,16 @@
-<h2><%= artist.name %></h2>
+<div id="artist_header">
+  <h1 class="smaller" id="artist_title"><%= artist.name %></h1>
+  <span id="artist_aliases">(также известен как Оксимирон и Окси)</span>
+</div>
 
-<ul>
-  <% artist.lyrics.each do |lyric| %>
-    <li><%= link_to lyric.title, artist_lyric_path(artist, lyric) %></li>
-  <% end %>
-</ul>
+<div id="artist_bio">
+  <%= artist.bio %>
+</div>
+
+<div id="lyrics_list">
+  <ul>
+    <% artist.lyrics.each do |lyric| %>
+      <li><%= link_to lyric.title, artist_lyric_path(artist, lyric) %></li>
+    <% end %>
+  </ul>
+</div>
