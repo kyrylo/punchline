@@ -19,3 +19,126 @@
 
 /* Responsive grids! http://susy.oddbird.net/ */
 @import "susy";
+
+@font-face
+{
+	font-family: 'Cuprum Italic';
+	src: url(font-path('cuprum-italic.eot?')) format('eot'), 
+	     url(font-path('cuprum-italic.woff')) format('woff'), 
+	     url(font-path('cuprum-italic.ttf')) format('truetype'),
+	     url(font-path('cuprum-italic.svg#CuprumItalic')) format('svg');
+}
+
+@font-face
+{
+	font-family: 'Scada Regular';
+	src: url('scada-regular.eot?') format('eot'), 
+	     url('scada-regular.woff') format('woff'), 
+	     url('scada-regular.ttf') format('truetype'),
+	     url('scada-regular.svg#ScadaRegular') format('svg');
+}
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a
+{
+	color: #1a6c77;
+	text-decoration: none;
+	border-bottom: 1px solid #9AC9CF;
+
+	&:visited {
+		color: #1a6c77;
+	}
+
+	&:hover {
+		color: #d81239;
+		border-bottom: 1px solid #df9caa;
+	}
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+#layout
+{
+	position: relative;
+
+	#header
+	{
+		background-color: #84429e;
+
+		#logo
+		{
+			font-family: 'Cuprum Italic';
+			font-size: 200%;
+
+			a
+			{
+				color: #FFFF00;
+				border-bottom: none;
+			}
+		}
+	}
+
+	#footer
+	{
+		background-color: #5959d8;
+	}
+}

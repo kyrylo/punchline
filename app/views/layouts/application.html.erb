@@ -8,11 +8,23 @@
 </head>
 <body>
 
-  <div id="header" style="font-size: 200%;">
-    <%= link_to_unless current_page?(root_path), 'Панчлайн', root_path %>
+<div id="layout">
+
+  <div id="header">
+    <div id="logo">
+      <%= link_to_unless current_page?(root_path), 'Панчлайн', root_path %>
+    </div>
   </div>
 
-<%= yield %>
+  <div id="page">
+    <%= yield %>
+  </div>
+
+  <div id="footer">
+    Сайт сделан в 2012 году.
+  </div>
+
+</div>
 
 </body>
 </html>
