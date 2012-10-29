@@ -2,7 +2,7 @@ class LyricsController < ApplicationController
   # GET /lyrics
   # GET /lyrics.json
   def index
-    @lyrics = Lyric.all
+    @lyrics = Lyric.find_all_by_artist_id(params[:artist_id])
 
     respond_to do |format|
       format.html # index.html.erb
