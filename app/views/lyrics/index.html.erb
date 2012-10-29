@@ -10,14 +10,14 @@
 <% @lyrics.each do |lyric| %>
   <tr>
     <td>
-      <%= link_to lyric.artist.name, lyric.artist %> — <%= link_to lyric.title, lyric %>
+      <%= link_to lyric.artist.name, lyric.artist %> — <%= link_to lyric.title, artist_lyric_path(lyric.artist, lyric) %>
     </td>
-    <td><%= link_to 'Edit', edit_lyric_path(lyric) %></td>
-    <td><%= link_to 'Destroy', lyric, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_artist_lyric_path(lyric.artist, lyric) %></td>
+    <td><%= link_to 'Destroy', [lyric.artist, lyric], method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Lyric', new_lyric_path %>
+<%= link_to 'New Lyric', new_artist_lyric_path %>

@@ -1,8 +1,8 @@
 class LyricsController < ApplicationController
-  # GET /lyrics
-  # GET /lyrics.json
+  before_filter :find_artist
+
   def index
-    @lyrics = Lyric.find_all_by_artist_id(params[:artist_id])
+    @lyrics = @artist.lyrics.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -10,10 +10,8 @@ class LyricsController < ApplicationController
     end
   end
 
-  # GET /lyrics/1
-  # GET /lyrics/1.json
   def show
-    @lyric = Lyric.find(params[:id])
+    @lyric = @artist.lyrics.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -21,10 +19,8 @@ class LyricsController < ApplicationController
     end
   end
 
-  # GET /lyrics/new
-  # GET /lyrics/new.json
   def new
-    @lyric = Lyric.new
+    @lyric = @artist.lyrics.build
 
     respond_to do |format|
       format.html # new.html.erb
@@ -32,19 +28,19 @@ class LyricsController < ApplicationController
     end
   end
 
-  # GET /lyrics/1/edit
   def edit
-    @lyric = Lyric.find(params[:id])
+    @lyric = @artist.lyrics.find(params[:id])
   end
 
-  # POST /lyrics
-  # POST /lyrics.json
   def create
-    @lyric = Lyric.new(params[:lyric])
+    @lyric = @artist.lyrics.build(params[:lyric])
 
     respond_to do |format|
       if @lyric.save
-        format.html { redirect_to @lyric, notice: 'Lyric was successfully created.' }
+        format.html {
+          redirect_to artist_lyric_url(@artist, @lyric),
+          notice: 'Lyric was successfully created.'
+        }
         format.json { render json: @lyric, status: :created, location: @lyric }
       else
         format.html { render action: "new" }
@@ -53,14 +49,15 @@ class LyricsController < ApplicationController
     end
   end
 
-  # PUT /lyrics/1
-  # PUT /lyrics/1.json
   def update
-    @lyric = Lyric.find(params[:id])
+    @lyric = @artist.lyrics.find(params[:id])
 
     respond_to do |format|
       if @lyric.update_attributes(params[:lyric])
-        format.html { redirect_to @lyric, notice: 'Lyric was successfully updated.' }
+        format.html {
+          redirect_to artist_lyric_url(@artist, @lyric),
+                      notice: 'Lyric was successfully updated.'
+        }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -69,15 +66,19 @@ class LyricsController < ApplicationController
     end
   end
 
-  # DELETE /lyrics/1
-  # DELETE /lyrics/1.json
   def destroy
-    @lyric = Lyric.find(params[:id])
+    @lyric = @artist.lyrics.find(params[:id])
     @lyric.destroy
 
     respond_to do |format|
-      format.html { redirect_to lyrics_url }
+      format.html { redirect_to artist_lyrics_url }
       format.json { head :no_content }
     end
+  end
+
+  private
+
+  def find_artist
+    @artist = Artist.find(params[:artist_id])
   end
 end
