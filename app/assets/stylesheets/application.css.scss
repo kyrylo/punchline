@@ -14,4 +14,8 @@
  *= require_tree .
  */
 
+/* Reset the shit \o/ */
+@import "compass/reset";
+
+/* Responsive grids! http://susy.oddbird.net/ */
 @import "susy";
