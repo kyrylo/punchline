@@ -2,6 +2,7 @@
 
 class Artist < ActiveRecord::Base
   has_many :lyrics
+  has_many :aliases
 
   attr_accessible :name, :city, :bio
 

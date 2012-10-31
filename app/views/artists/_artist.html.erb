@@ -1,6 +1,10 @@
 <div id="artist_header">
   <h1 class="smaller" id="artist_title"><%= artist.name %></h1>
-  <span id="artist_aliases">(также известен как Оксимирон и Окси)</span>
+  <% if @aliases.any? %>
+  <span id="artist_aliases">
+    (также известен как <%= ContractedSentence.convert(@aliases.map(&:name)) %>)
+  </span>
+  <% end %>
 </div>
 
 <div id="artist_bio">

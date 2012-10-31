@@ -13,7 +13,8 @@ class ArtistsController < ApplicationController
   # GET /artists/1
   # GET /artists/1.json
   def show
-    @artist = Artist.find(params[:id])
+    @artist  = Artist.find(params[:id])
+    @aliases = @artist.aliases
 
     respond_to do |format|
       format.html # show.html.erb

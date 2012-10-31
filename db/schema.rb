@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121027152546) do
+ActiveRecord::Schema.define(:version => 20121030213807) do
+
+  create_table "aliases", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "artist_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "aliases", ["artist_id"], :name => "index_aliases_on_artist_id"
 
   create_table "artists", :force => true do |t|
     t.string   "name"

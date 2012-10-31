@@ -43,4 +43,10 @@ describe Artist do
       end
     end
   end
+
+  describe "city" do
+  end
+
+  describe "bio" do
+  end
 end
