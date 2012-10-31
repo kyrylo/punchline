@@ -15,6 +15,10 @@ gem 'pg', '~> 0.14.1'
 # Source code: https://github.com/rails/jquery-rails
 gem 'jquery-rails'
 
+# Russian language support.
+# Source code: https://github.com/yaroslav/russian
+gem 'russian', '~> 0.6.0'
+
 # Gems used only for assets and not required in production environments by
 # default.
 group :assets do

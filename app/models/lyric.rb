@@ -22,4 +22,8 @@ class Lyric < ActiveRecord::Base
               maximum:   4100, # The longest lyric I could find on the interwebz.
               too_short: "Текст трека должен иметь хотя бы %{count} символа.",
               too_long:  "Максимальная длина текста не должна превышать %{count} символов." }
+
+  def to_param
+    "#{id} #{Russian.translit(title)}".parameterize
+  end
 end

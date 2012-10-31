@@ -19,4 +19,8 @@ class Artist < ActiveRecord::Base
               maximum:   45,
               too_short: "Имя исполнителя должно содержать не менее %{count} символов.",
               too_long:  "Имя исполнителя не должно превышать %{count} символов." }
+
+  def to_param
+    "#{id} #{Russian.translit(name)}".parameterize
+  end
 end
