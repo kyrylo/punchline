@@ -1,12 +1,12 @@
 # coding: utf-8
 
 class Artist < ActiveRecord::Base
-  has_many :lyrics
-  has_many :aliases
+  has_many :lyrics,  dependent: :destroy
+  has_many :aliases, dependent: :destroy
 
   attr_accessible :name, :city, :bio
 
-  validates_associated :lyrics
+  validates_associated :lyrics, :aliases
 
   validates :name,
             presence: {

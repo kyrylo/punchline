@@ -16,7 +16,10 @@ pm_bio =<<BIO
 воспринимать его исключительно в этом качестве. Все совпадения случайны. Мнения
 авторов могут не совпадать с их точкой зрения.
 BIO
-pm = Artist.create!(name: 'Проект Увечье', bio: pm_bio)
+pm = Artist.create!(
+  name: 'Проект Увечье',
+  bio: pm_bio)
+pm.aliases.create!(name: 'ПУ')
 
 ox_bio =<<BIO
 Родился в 1985 в Ленинграде. Отец - физик-теоретик, мать - библиотекарь. В
@@ -58,9 +61,17 @@ ox_bio =<<BIO
 услышан. Теперь, после распада не оправдавшей надежд предыдущей команды, он
 отправляется в сольное плавание – и будьте уверены, он выплывет.
 BIO
-ox = Artist.create!(name: 'Oxxxymiron', bio: ox_bio, city: 'Лондон')
+ox = Artist.create!(
+  name:    'Oxxxymiron',
+  bio:     ox_bio,
+  city:    'Лондон')
 
-ch = Artist.create!(name: 'the Chemodan', city: 'Петрозаводск')
+['Оксимирон', 'Окси', 'Мирон'].each { |a| ox.aliases.create!(name: a) }
+
+ch = Artist.create!(
+  name:    'the Chemodan',
+  city:    'Петрозаводск')
+['Чемо', 'Чемодан Клан'].each { |a| ch.aliases.create!(name: a) }
 
 # Проект Увечье
 

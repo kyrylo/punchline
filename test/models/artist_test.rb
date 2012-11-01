@@ -15,7 +15,7 @@ describe Artist do
       it "should be present" do
         artist = Artist.new
 
-        refute artist.save, "An artist can be saved without a name"
+        refute artist.save, "Saved an artist without a name"
         artist.errors[:name].must_include "Необходимо указать имя исполнителя."
       end
 
