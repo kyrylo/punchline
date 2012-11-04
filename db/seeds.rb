@@ -16,9 +16,7 @@ pm_bio =<<BIO
 воспринимать его исключительно в этом качестве. Все совпадения случайны. Мнения
 авторов могут не совпадать с их точкой зрения.
 BIO
-pm = Artist.create!(
-  name: 'Проект Увечье',
-  bio: pm_bio)
+pm = Artist.create!(name: 'Проект Увечье', bio: pm_bio, rap_group: true)
 pm.aliases.create!(name: 'ПУ')
 
 ox_bio =<<BIO
@@ -61,17 +59,30 @@ ox_bio =<<BIO
 услышан. Теперь, после распада не оправдавшей надежд предыдущей команды, он
 отправляется в сольное плавание – и будьте уверены, он выплывет.
 BIO
-ox = Artist.create!(
-  name:    'Oxxxymiron',
-  bio:     ox_bio,
-  city:    'Лондон')
-
+ox = Artist.create!(name: 'Oxxxymiron', bio: ox_bio, city: 'Лондон')
 ['Оксимирон', 'Окси', 'Мирон'].each { |a| ox.aliases.create!(name: a) }
 
-ch = Artist.create!(
-  name:    'the Chemodan',
-  city:    'Петрозаводск')
+ch = Artist.create!(name: 'the Chemodan', city: 'Петрозаводск', rap_group: true)
 ['Чемо', 'Чемодан Клан'].each { |a| ch.aliases.create!(name: a) }
+
+luperkal = Artist.create!(name: 'Луперкаль')
+ripbeat  = Artist.create!(name: 'RipBeat')
+olga     = Artist.create!(name: 'Ольга Шибалова')
+sharon   = Artist.create!(name: 'SharOn')
+
+[luperkal, ripbeat, olga, sharon].each do |m|
+  pm.memberships.create!(member_id: m.id)
+end
+
+louie = Artist.create!(name: 'Грязный Луи', city: 'Петрозаводск')
+['Чемодан', 'Луи'].each { |a| louie.aliases.create!(name: a) }
+
+brick = Artist.create!(name: 'Brick Bazuka', city: 'Петрозаводск')
+['Брик Базука'].each { |a| brick.aliases.create!(name: a) }
+
+[louie, brick].each do |m|
+  ch.memberships.create!(member_id: m.id)
+end
 
 # Проект Увечье
 

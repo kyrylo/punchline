@@ -1,4 +1,7 @@
 Punchline::Application.routes.draw do
+
+  resources :memberships, only: [:create, :destroy]
+
   resources :artists do
     resources :lyrics
   end

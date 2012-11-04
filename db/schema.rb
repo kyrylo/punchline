@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121030213807) do
+ActiveRecord::Schema.define(:version => 20121102120600) do
 
   create_table "aliases", :force => true do |t|
     t.string   "name",       :null => false
@@ -24,10 +24,11 @@ ActiveRecord::Schema.define(:version => 20121030213807) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.string   "city"
     t.text     "bio"
+    t.boolean  "rap_group",  :default => false, :null => false
   end
 
   create_table "lyrics", :force => true do |t|
@@ -39,5 +40,12 @@ ActiveRecord::Schema.define(:version => 20121030213807) do
   end
 
   add_index "lyrics", ["artist_id"], :name => "index_lyrics_on_artist_id"
+
+  create_table "memberships", :force => true do |t|
+    t.integer  "artist_id"
+    t.integer  "member_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
 end
