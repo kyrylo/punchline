@@ -39,7 +39,7 @@ class LyricsController < ApplicationController
       if @lyric.save
         format.html {
           redirect_to artist_lyric_url(@artist, @lyric),
-          notice: 'Lyric was successfully created.'
+                      notice: 'Lyric was successfully created.'
         }
         format.json { render json: @lyric, status: :created, location: @lyric }
       else
