@@ -2,7 +2,15 @@ oxxxymiron:
   name: Oxxxymiron
 
 project_mutilation:
-  name: Проект Увечье
+  name:      Проект Увечье
+  rap_group: true
 
 chemodan:
-  name: the Chemodan
+  name:      the Chemodan
+  rap_group: true
+
+bazuka:
+  name: Brick Bazuka
+
+louie:
+  name: Грязный Луи

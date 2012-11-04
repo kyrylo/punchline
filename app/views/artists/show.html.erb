@@ -4,3 +4,23 @@
 
 <%= link_to 'Edit', edit_artist_path(@artist) %> |
 <%= link_to 'Back', artists_path %>
+
+<br />
+<br />
+
+<% if @artist.rap_group? %>
+  <h3>Список участников</h3>
+
+  <% @artist.memberships.each do |membership| %>
+    <%= membership.member.name %>
+    (<%= link_to 'remove', membership_path(membership, artist_id: @artist.id), method: :delete %>)
+    <br>
+  <% end %>
+
+  <br>
+  <br>
+  <% @vacant_mcs.each do |mc| %>
+    <%= mc.name %><%= link_to 'Добавить', memberships_path(member_id: mc.id, artist_id: @artist.id), method: :post %>
+    <br>
+  <% end %>
+<% end %>

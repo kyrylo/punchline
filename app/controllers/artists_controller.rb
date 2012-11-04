@@ -1,6 +1,5 @@
 class ArtistsController < ApplicationController
-  # GET /artists
-  # GET /artists.json
+
   def index
     @artists = Artist.all
 
@@ -10,11 +9,14 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # GET /artists/1
-  # GET /artists/1.json
   def show
     @artist  = Artist.find(params[:id])
     @aliases = @artist.aliases
+
+    if @artist.rap_group?
+      @members    = @artist.members
+      @vacant_mcs = Artist.all_vacant_mcs(@artist)
+    end
 
     respond_to do |format|
       format.html # show.html.erb
@@ -22,8 +24,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # GET /artists/new
-  # GET /artists/new.json
   def new
     @artist = Artist.new
 
@@ -33,13 +33,10 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # GET /artists/1/edit
   def edit
     @artist = Artist.find(params[:id])
   end
 
-  # POST /artists
-  # POST /artists.json
   def create
     @artist = Artist.new(params[:artist])
 
@@ -54,8 +51,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # PUT /artists/1
-  # PUT /artists/1.json
   def update
     @artist = Artist.find(params[:id])
 
@@ -70,8 +65,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # DELETE /artists/1
-  # DELETE /artists/1.json
   def destroy
     @artist = Artist.find(params[:id])
     @artist.destroy
@@ -81,4 +74,5 @@ class ArtistsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end
