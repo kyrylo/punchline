@@ -1,9 +1,8 @@
 require "minitest_helper"
 
 describe HomeController do
-  it "should get index" do
+  it "must get index" do
     get :index
     assert_response :success
   end
-
 end

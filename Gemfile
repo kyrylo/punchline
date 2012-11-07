@@ -48,6 +48,16 @@ group :assets do
   gem 'susy', '~> 1.0.3'
 end
 
+group :test do
+  # Capybara integration for MiniTest::Rails.
+  # Source code: https://github.com/blowmage/minitest-rails-capybara
+  gem 'minitest-rails-capybara', '~> 0.1'
+
+  # A fixtures replacement with a straightforward definition syntax.
+  # Source code: https://github.com/thoughtbot/factory_girl_rails
+  gem "factory_girl_rails", "~> 4.1.0"
+end
+
 group :test, :development do
   # MiniTest integration.
   # Source code: https://github.com/blowmage/minitest-rails

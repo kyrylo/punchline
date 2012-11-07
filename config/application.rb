@@ -73,7 +73,8 @@ module Punchline
     #   # And also we don't need `--skip-fixture` anymore.
     #   rails g model Admin --skip-fixture
     config.generators do |g|
-      g.test_framework :mini_test, spec: true, fixture: false
+      g.test_framework :mini_test, spec: true
+      g.fixture_replacement :factory_girl, dir: 'test/factories'
     end
   end
 end

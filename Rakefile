@@ -5,3 +5,6 @@
 require File.expand_path('../config/application', __FILE__)
 
 Punchline::Application.load_tasks
+
+# Add "lib" directory to default minitest tasks.
+MINITEST_TASKS << "lib"

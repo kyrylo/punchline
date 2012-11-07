@@ -3,12 +3,10 @@
 require "minitest_helper"
 
 describe LyricsController do
-
   before do
-    @lyric  = lyrics(:between_us)
-    @artist = @lyric.artist
-    @update = { title: 'Стрижка',
-                text:  'Подровнял виски. Чё сказать? Ну вылитый скин!' }
+    @lyric  = FactoryGirl.create(:lyric)
+    @artist = FactoryGirl.create(:artist_with_lyrics)
+    @update = FactoryGirl.attributes_for(:lyric)
   end
 
   it "must get index" do
@@ -24,30 +22,30 @@ describe LyricsController do
 
   it "must create lyric" do
     assert_difference('Lyric.count') do
-      post :create, artist_id: @artist, id: @lyric, lyric: @update
+      post :create, artist_id: @artist, lyric: @update
     end
 
     assert_redirected_to artist_lyric_path(@artist, assigns(:lyric))
   end
 
   it "must show lyric" do
-    get :show, artist_id: @artist, id: @lyric
+    get :show, artist_id: @lyric.artist, id: @lyric.id
     assert_response :success
   end
 
   it "must get edit" do
-    get :edit, artist_id: @artist, id: @lyric
+    get :edit, artist_id: @lyric.artist, id: @lyric.id
     assert_response :success
   end
 
   it "must update lyric" do
-    put :update, artist_id: @artist, id: @lyric, lyric: @update
-    assert_redirected_to artist_lyric_path(@artist, assigns(:lyric))
+    put :update, artist_id: @lyric.artist, id: @lyric, lyric: @update
+    assert_redirected_to artist_lyric_path(@lyric.artist, assigns(:lyric))
   end
 
   it "must destroy lyric" do
     assert_difference('Lyric.count', -1) do
-      delete :destroy, artist_id: @artist, id: @lyric
+      delete :destroy, artist_id: @lyric.artist, id: @lyric.id
     end
 
     assert_redirected_to artist_lyrics_path
