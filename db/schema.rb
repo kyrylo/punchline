@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102120600) do
+ActiveRecord::Schema.define(:version => 20121112160826) do
 
   create_table "aliases", :force => true do |t|
     t.string   "name",       :null => false
@@ -30,6 +30,24 @@ ActiveRecord::Schema.define(:version => 20121102120600) do
     t.text     "bio"
     t.boolean  "rap_group",  :default => false, :null => false
   end
+
+  create_table "explanations", :force => true do |t|
+    t.integer  "line_id"
+    t.text     "text",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "explanations", ["line_id"], :name => "index_explanations_on_line_id"
+
+  create_table "lines", :force => true do |t|
+    t.integer  "lyric_id"
+    t.text     "text",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "lines", ["lyric_id"], :name => "index_lines_on_lyric_id"
 
   create_table "lyrics", :force => true do |t|
     t.string   "title",      :null => false
