@@ -1,6 +1,8 @@
 # coding: utf-8
 
 class Lyric < ActiveRecord::Base
+  has_many :lines
+
   belongs_to :artist
 
   attr_accessible :text, :title
