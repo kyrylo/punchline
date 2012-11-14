@@ -55,7 +55,12 @@ group :test do
 
   # A fixtures replacement with a straightforward definition syntax.
   # Source code: https://github.com/thoughtbot/factory_girl_rails
-  gem "factory_girl_rails", "~> 4.1.0"
+  gem 'factory_girl_rails', '~> 4.1.0'
+
+  # A PhantomJS driver for Capybara. It allows to run Capybara tests on a
+  # headless WebKit browser, provided by PhantomJS.
+  # Source code: https://github.com/jonleighton/poltergeist
+  gem 'poltergeist', '~> 1.0.2'
 end
 
 group :test, :development do
