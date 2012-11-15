@@ -66,7 +66,7 @@ end
 group :test, :development do
   # MiniTest integration.
   # Source code: https://github.com/blowmage/minitest-rails
-  gem 'minitest-rails'
+  gem 'minitest-rails', git: 'git://github.com/blowmage/minitest-rails.git'
 
   # An IRB alternative and runtime developer console.
   # Source code: https://github.com/pry/pry
