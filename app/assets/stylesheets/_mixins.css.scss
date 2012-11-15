@@ -1,0 +1,16 @@
+@mixin forbid-selection
+{
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+@mixin custom-font($font_name, $svg_name, $font_file)
+{
+	font-family: #{$font_name};
+	src: url(font-path('#{$font_file}.eot?')) format('eot'),
+	     url(font-path('#{$font_file}.woff')) format('woff'),
+	     url(font-path('#{$font_file}.ttf')) format('truetype'),
+	     url(font-path('#{$font_file}.svg##{$svg_name}')) format('svg');
+}

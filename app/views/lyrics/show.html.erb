@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b><%= @artist.name %> — <%= @lyric.title %></b>
-</p>
+<h2>
+<%= @artist.name %> — <%= @lyric.title %>
+</h2>
 
-<pre>
-  <%= @lyric.text %>
-</pre>
+<div id="lyric">
+<%= simple_format @lyric.text %>
+</div>
 
 
 <%= link_to 'Edit', edit_artist_lyric_path(@artist, @lyric) %> |

@@ -1,0 +1,15 @@
+/*
+ * Scope: logotype.
+ */
+@font-face
+{
+	@include custom-font('Cuprum Italic', 'CuprumItalic', 'cuprum-italic');
+}
+
+/*
+ * Scope: all titles.
+ */
+@font-face
+{
+	@include custom-font('Scada Regular', 'ScadaRegular', 'scada-regular');
+}

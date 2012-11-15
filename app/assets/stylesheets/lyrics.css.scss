@@ -1,3 +1,27 @@
 // Place all the styles related to the Lyrics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#lyric
+{
+	width: 50%;
+	position: relative;
+}
+
+#explain_popup
+{
+	@include forbid-selection;
+	cursor: pointer;
+	position: absolute;
+	background: black;
+	color: white;
+	padding: {
+		left: 2px;
+		right: 2px;
+	}
+	margin: {
+		left: -15px;
+		top: -15px;
+	}
+	opacity: 0.9;
+}

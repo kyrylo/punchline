@@ -1,0 +1,148 @@
+/* Reset the shit \o/ */
+@import "compass/reset";
+
+/* Responsive grids! http://susy.oddbird.net/ */
+@import "susy";
+
+/* Define all magic variables in there. */
+@import "_variables";
+
+/* Define all fabulous mixins in there. */
+@import "_mixins";
+
+/* Add custom stylish HTML5(TM) fonts. */
+@import "_custom_fonts";
+
+@import "home";
+
+@import "artists";
+
+@import "lyrics";
+
+body
+{
+	margin: 0;
+	padding: 0;
+	background-color: #ffffff;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+	font-family: 'Scada Regular', Arial, sans-serif;
+	font-weight: normal;
+	position: relative;
+	color: #000000;
+}
+
+h1
+{
+	font-size: 264%;
+	margin: 0.1em 0 0.3em;
+	line-height: 1.1;
+}
+
+h1.smaller
+{
+	font-size: 168%;
+}
+
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  margin-bottom: 1em;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a
+{
+	color: #1a6c77;
+	text-decoration: none;
+	border-bottom: 1px solid #9AC9CF;
+
+	&:visited {
+		color: #1a6c77;
+	}
+
+	&:hover {
+		color: #d81239;
+		border-bottom: 1px solid #df9caa;
+	}
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+#layout
+{
+	@include container;
+	position: relative;
+
+	#header
+	{
+		background-color: #84429e;
+
+		#logo
+		{
+			font-family: 'Cuprum Italic';
+			font-size: 200%;
+
+			a
+			{
+				color: #FFFF00;
+				border-bottom: none;
+			}
+		}
+	}
+
+	#footer
+	{
+		background-color: #5959d8;
+	}
+}
