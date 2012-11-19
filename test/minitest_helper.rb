@@ -16,13 +16,18 @@ require 'minitest/rails/capybara'
 require 'capybara/poltergeist'
 
 class MiniTest::Rails::ActiveSupport::TestCase
+
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   # fixtures :all
+
+  # Don't touch this, bish. Or your acceptance tests will be failing.
+  self.use_transactional_fixtures = false
 
   Capybara.register_driver :poltergeist do |app|
     Capybara::Poltergeist::Driver.new(app)
   end
   Capybara.current_driver = :poltergeist
+
 end
 
 # Do you want all existing Rails tests to use MiniTest::Rails?
