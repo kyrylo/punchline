@@ -4,24 +4,30 @@
 
 #lyric
 {
+	cursor: default;
 	width: 50%;
 	position: relative;
-}
 
-#explain_popup
-{
-	@include forbid-selection;
-	cursor: pointer;
-	position: absolute;
-	background: black;
-	color: white;
-	padding: {
-		left: 2px;
-		right: 2px;
+	.lyric_word
+	{
+		&:hover
+		{
+			cursor: pointer;
+			background: red;
+			color: white;
+		}
 	}
-	margin: {
-		left: -15px;
-		top: -15px;
+
+	.selected_word
+	{
+		@include forbid-selection;
+		background: green;
+		color: white;
+
+		&:hover
+		{
+			background: green;
+			color: white;
+		}
 	}
-	opacity: 0.9;
 }

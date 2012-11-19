@@ -1,5 +1,14 @@
-$total-columns  : 12;
-$column-width   : 10em;
-$gutter-width   : 1em;
-$grid-padding   : $gutter-width;
+/* Susy CSS framework */
+
+// The number of columns in default grid layout.
+$total-columns: 12;
+
+// The width of a single column in your grid.
+$column-width: 7em;
+
+// The space between columns.
+$gutter-width: 0em;
+
+// Padding on the left and right of a grid container.
+$grid-padding: $gutter-width;
 

@@ -14,3 +14,12 @@
 	     url(font-path('#{$font_file}.ttf')) format('truetype'),
 	     url(font-path('#{$font_file}.svg##{$svg_name}')) format('svg');
 }
+
+@mixin fixed($layer_index)
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: $layer_index;
+}

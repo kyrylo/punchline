@@ -126,18 +126,32 @@ div {
 
 	#header
 	{
+		@include fixed(1000);
+		width: 100%;
 		background-color: #84429e;
+		height: 40px;
 
 		#logo
 		{
-			font-family: 'Cuprum Italic';
-			font-size: 200%;
+			text-align: right;
+			font: {
+				family: 'Cuprum Italic';
+				/*size: 200%;*/
+			}
+
 
 			a
 			{
 				color: #FFFF00;
 				border-bottom: none;
 			}
+		}
+	}
+
+	#page
+	{
+		padding: {
+			top: 40px;
 		}
 	}
 
