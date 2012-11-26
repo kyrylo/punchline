@@ -5,7 +5,7 @@ ruby '1.9.3'
 # database-backed web applications according to the Model-View-Controller (MVC)
 # pattern. It's all about Rails.
 # Source code: https://github.com/rails/rails
-gem 'rails', '= 3.2.8'
+gem 'rails', '= 3.2.9'
 
 # The Ruby interface to the PostgreSQL RDBMS.
 # Source code: https://bitbucket.org/ged/ruby-pg/wiki/Home
