@@ -29,4 +29,7 @@ describe "routes acceptance test" do
     assert_recognizes({controller: 'lyrics', action: 'update', artist_id: '88', id: '69'}, {path: '/artists/88/lyrics/69', method: :put})
     assert_recognizes({controller: 'lyrics', action: 'destroy', artist_id: '88', id: '69'}, {path: '/artists/88/lyrics/69', method: :delete})
   end
+
+  test "explanations" do
+  end
 end

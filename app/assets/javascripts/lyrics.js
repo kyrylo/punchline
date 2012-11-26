@@ -3,7 +3,7 @@
 
 // I know, I know, this code is ugly.
 
-$(function() {
+$(document).ready(function() {
 	$('html').click(function() {
 		var selectedWords = $('.selected_word');
 		selectedWords.removeClass('selected_word');
