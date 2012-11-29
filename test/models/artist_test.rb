@@ -8,6 +8,10 @@ describe Artist do
     @rap_group = FactoryGirl.create(:rap_group)
   end
 
+  after do
+    DatabaseCleaner.clean
+  end
+
   it "must create an artist" do
     artist = FactoryGirl.build(:artist)
 

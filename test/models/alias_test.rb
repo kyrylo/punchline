@@ -5,7 +5,7 @@ require "minitest_helper"
 describe Alias do
   before do
     @alias  = FactoryGirl.create(:alias)
-    @artist = FactoryGirl.create(:artist_with_aliases)
+    @artist = FactoryGirl.create(:artist)
   end
 
   it "must create an alias for an artist" do
@@ -25,8 +25,8 @@ describe Alias do
       end
 
       it "must be unique (and case insensitive) in the scope of artist_id" do
-        aliass = Alias.new(name: 'оксана', artist_id: @artist)
-        other  = Alias.new(name: 'ОКСАНА', artist_id: @artist)
+        aliass = Alias.new(name: 'оксана')
+        other  = Alias.new(name: 'ОКСАНА')
 
         @artist.aliases << aliass
         assert @artist.save
@@ -37,17 +37,19 @@ describe Alias do
       end
 
       it "must be at least 2 characters long" do
-        aliass = Alias.new(name: 'Ц', artist_id: @artist)
+        aliass = Alias.new(name: 'Ц')
+        @artist.aliases << aliass
 
-        refute aliass.save, "Saved an an alias with length of name lesser than 2 characters"
+        refute @artist.save, "Saved an an alias with length of name lesser than 2 characters"
         aliass.errors[:name].must_include "Псевдоним должен содержать не менее 2 символов."
       end
 
       it "must be no longer than 45 symbols" do
         long_name = 'Aбабагаламага-' * 4
-        aliass = Alias.new(name: long_name, artist_id: @artist)
+        aliass = Alias.new(name: long_name)
+        @artist.aliases << aliass
 
-        refute aliass.save, "Saved an alias with length of name longer than 45 characters"
+        refute @artist.save, "Saved an alias with length of name longer than 45 characters"
         aliass.errors[:name].must_include "Псевдоним не должен превышать 45 символов."
       end
     end

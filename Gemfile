@@ -61,6 +61,11 @@ group :test do
   # headless WebKit browser, provided by PhantomJS.
   # Source code: https://github.com/jonleighton/poltergeist
   gem 'poltergeist', '~> 1.0.2'
+
+  # Strategies for cleaning databases. Can be used to ensure a clean state for
+  # testing.
+  # Source code: https://github.com/bmabey/database_cleaner
+  gem 'database_cleaner', '~> 0.9.1'
 end
 
 group :test, :development do
