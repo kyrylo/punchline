@@ -15,6 +15,7 @@ describe "LyricLinesSelection Acceptance Test" do
   let(:html) { find 'html' }
 
   before do
+    DatabaseCleaner.clean
     visit artist_lyric_path lyric.artist.id, lyric
 
     # Ensure we're on the right page.
