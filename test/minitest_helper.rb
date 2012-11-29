@@ -28,6 +28,8 @@ class MiniTest::Rails::ActiveSupport::TestCase
   end
   Capybara.current_driver = :poltergeist
 
+  DatabaseCleaner.strategy = :truncation
+
 end
 
 # Do you want all existing Rails tests to use MiniTest::Rails?
