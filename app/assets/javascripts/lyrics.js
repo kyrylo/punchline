@@ -1,7 +1,8 @@
 // Place all the behaviors and hooks related to the matching controller here.
 // All this logic will automatically be available in application.js.
 
-// I know, I know, this code is ugly.
+// I know, I know, this code is ugly. Can't do anything with it now. No effin
+// clue what to do!
 
 $(document).ready(function() {
 	$('html').click(function() {
@@ -22,13 +23,23 @@ $(document).ready(function() {
 		    closeWordIndex = $allWords.index($closeWord);
 
 		if ($this.hasClass('selected_word')) {
-			if (thisIndex === openWordIndex) {
-				$this.removeClass('selected_word');
-				$this.removeAttr('id');
-			}
-			else {
-				console.log('Submit selection');
-			}
+			var $selectedWords = $('.selected_word'),
+			    $lyric = $('#lyric'),
+			    lyric_id = $lyric.data('lyric-id');
+
+			var text = $selectedWords.map(function() {
+				return $(this).text();
+			}).toArray().join(' ');
+
+			var params = $.param({
+				text: text,
+				lyric_id: lyric_id
+			});
+
+			// appendTo is needed for dumb Firefox. Otherwise the
+			// click() won't affect.
+			$('<a>', { href: 'foo' }).appendTo($('body'))[0].click();
+			//$('<a>', { href: '/lines/new?'+params }).appendTo($('body'))[0].click();
 		}
 		else {
 			if ($openWord.length) {

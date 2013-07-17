@@ -112,7 +112,8 @@ describe "LyricLinesSelection Acceptance Test" do
   #test "line selection can be shrinked" do
   #end
 
-  test "click on selected words submits selection" do
+  test "click on selected word submits whole selection" do
+    binding.pry
     #2.times { open_node.click }
     #open_node[:class].must_equal 'lyric_word'
     #open_node[:id].must_be_nil

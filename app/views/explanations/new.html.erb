@@ -1,0 +1,7 @@
+<h2><%= @line.text %></h2>
+
+<%= form_for @explanation do |f| %>
+    Текст объяснения:<br />
+    <%= f.text_area :text %>
+  <%= f.submit 'Объяснить' %>
+<% end %>

@@ -4,10 +4,9 @@
 <%= @artist.name %> — <%= @lyric.title %>
 </h2>
 
-<div id="lyric">
-<%= build_granular_lyric_for @lyric.text %>
-</div>
-
+<%= content_tag :div, id: 'lyric', data: { artist_id: @artist.to_param, lyric_id: @lyric.to_param } do %>
+  <%= build_granular_lyric_for @lyric.text %>
+<% end %>
 
 <%= link_to 'Edit', edit_artist_lyric_path(@artist, @lyric) %> |
 <%= link_to 'Back', artist_lyrics_path %>

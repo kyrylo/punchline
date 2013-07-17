@@ -1,0 +1,12 @@
+<h3><%= @line_text %></h3>
+
+<%= form_for @line, url: { action: :create,
+                           line: {
+                           lyric_id: @lyric.id,
+                           text: @line_text } } do |line_form| %>
+  <%= fields_for :explanation do |explanation| %>
+    <%= explanation.text_field :text %>
+  <% end %>
+
+  <%= line_form.submit 'Объяснить' %>
+<% end %>

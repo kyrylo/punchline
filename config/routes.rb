@@ -1,11 +1,11 @@
 Punchline::Application.routes.draw do
 
   resources :memberships, only: [:create, :destroy]
+  resources :explanations, only: [:new, :create]
+  resources :lines, only: [:new, :create]
 
   resources :artists do
-    resources :lyrics do
-      resources :explanations
-    end
+    resources :lyrics
   end
 
   # The priority is based upon order of creation:
